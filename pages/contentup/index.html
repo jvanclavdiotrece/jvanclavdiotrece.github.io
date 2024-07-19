@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Upload/Management - DevHub</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        main h2 {
+            color: #333;
+        }
+        .submission-form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .submission-form textarea,
+        .submission-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submission-form textarea {
+            height: 150px;
+        }
+        .submission-form button {
+            background-color: #494be7;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>DevHub</h1>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../signuppage/index.html">Sign-up</a></li>
+                    <li><a href="../loginpage/index.html">Log-in</a></li>
+                    <li><a href="../editpage/index.html">Profile/Edit Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="panel">
+            <button onclick="location.href='../dashboard/index.html'">Dashboard</button>
+            <button onclick="location.href='../notifications/index.html'">Notifications</button>
+            <button onclick="location.href='../bookmarks/index.html'">Bookmarks/Favorites</button>
+            <button onclick="location.href='../settings/index.html'">Settings</button>
+            <button onclick="location.href='../contentup/index.html'">Content Upload/Management</button>
+            <button onclick="location.href='../contacts/index.html'">Contact Us</button>
+        </aside>
+
+        <main>
+            <section id="content-upload">
+                <h2>Content Upload/Management</h2>
+                <p>Upload and manage your content here. Share your tutorials, articles, and resources with the community.</p>
+                
+                <div class="submission-form">
+                    <form id="contentForm" action="submit_content_form.php" method="post">
+                        <input type="text" name="title" placeholder="Title" required>
+                        <textarea name="description" rows="5" placeholder="Description" required></textarea>
+                        <input type="file" name="file" accept=".pdf,.doc,.docx,.txt" required>
+                        <button type="submit">Upload Content</button>
+                    </form>
+                    <p id="successMessage" style="display: none; color: green;">Your content has been uploaded!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 DevHub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'block';
+            }, 1000); 
+        });
+    </script>
+</body>
+</html>

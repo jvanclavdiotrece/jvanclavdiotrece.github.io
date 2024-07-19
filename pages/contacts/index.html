@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DevHub</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        main h2 {
+            color: #333;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #4943ed;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .success-message {
+            display: none;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>DevHub</h1>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../signuppage/index.html">Sign-up</a></li>
+                    <li><a href="../loginpage/index.html">Log-in</a></li>
+                    <li><a href="../editpage/index.html">Profile/Edit Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="panel">
+            <button onclick="location.href='../dashboard/index.html'">Dashboard</button>
+            <button onclick="location.href='../notifications/index.html'">Notifications</button>
+            <button onclick="location.href='../bookmarks/index.html'">Bookmarks/Favorites</button>
+            <button onclick="location.href='../settings/index.html'">Settings</button>
+            <button onclick="location.href='../contentup/index.html'">Content Upload/Management</button>
+            <button onclick="location.href='../contacts/index.html'">Contact Us</button>
+        </aside>
+
+        <main>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need support, feel free to reach out to us.</p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> support.devhub@gmail.com</p>
+                    <p><strong>Phone:</strong> +63 9***********</p>
+                    <p><strong>Address:</strong> Padre Paredes St, Sampaloc, Manila, 1015 Metro Manila</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <p class="success-message">Your message has been sent!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 DevHub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.querySelector('.success-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
